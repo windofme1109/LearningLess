@@ -1,0 +1,25 @@
+// 通用规则
+// 使用@_这个参数，表示我们只要调用triangle()，就首先会调用这个规则，然后才会去使用精确匹配的规则
+.triangle(@_, @color) {
+  width: 0;
+  height: 0;
+  border-width: 50px;
+  border-style: solid;
+}
+
+// 向下
+.triangle(B, @color) {
+  border-color: @color transparent transparent transparent;
+}
+// 向左
+.triangle(L, @color) {
+  border-color: transparent @color transparent transparent;
+}
+// 向上
+.triangle(T, @color) {
+  border-color: transparent transparent @color transparent;
+}
+// 向右
+.triangle(R, @color) {
+  border-color: transparent transparent transparent @color ;
+}

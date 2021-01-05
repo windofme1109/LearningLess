@@ -1,0 +1,29 @@
+/*清除元素的默认样式*/
+* {
+  margin: 0;
+  padding: 0;
+}
+#wrap {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+#wrap .inner {
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+  position: relative;
+  background-color: black;
+  height: 100px;
+  width: 100px;
+}
+#wrap .inner2 {
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+  position: relative;
+  background-color: yellow;
+  height: 100px;
+  width: 100px;
+}
+/*# sourceMappingURL=01.css.map */

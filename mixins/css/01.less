@@ -1,0 +1,57 @@
+
+// 清除元素的默认样式
+/*清除元素的默认样式*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+//.generalStyle() {
+//  position: relative;
+//  background-color: pink;
+//  height: 100px;
+//  width: 100px;
+//}
+
+// 参数
+//.generalStyle(@width, @height, @color) {
+//  position: relative;
+//  background-color: @color;
+//  height: @height;
+//  width: @width;
+//}
+
+// 默认值
+.generalStyle(@width: 100px, @height: 100px, @color: pink) {
+  position: relative;
+  background-color: @color;
+  height: @height;
+  width: @width;
+}
+
+#wrap {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  border: 1px solid black;
+  margin: 0 auto;
+  .inner {
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    //.generalStyle;
+    //.generalStyle(100px, 100px, blue);
+    //.generalStyle();
+    // 命名参数
+    .generalStyle(@color: black);
+
+  }
+  .inner2 {
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+    //.generalStyle;
+    //.generalStyle(100px, 100px, green);
+    //.generalStyle();
+    // 命名参数
+    .generalStyle(@color: yellow);
+  }
+}

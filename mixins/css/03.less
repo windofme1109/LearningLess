@@ -1,0 +1,12 @@
+
+.borderStyle(@with: 1px, @style: solid, @color: red) {
+  border: @arguments;
+}
+
+#wrap {
+  .inner {
+    width: 100px;
+    height: 100px;
+    .borderStyle();
+  }
+}
