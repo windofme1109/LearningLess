@@ -1,0 +1,47 @@
+.test {
+  margin: 10px;
+}
+div {
+  background: black;
+  color: white;
+}
+.test::after {
+  content: 1px 3px 5px 7px 9px;
+}
+.sel-one {
+  a: one;
+}
+.sel-two {
+  a: two;
+}
+.set {
+  one-1: blue;
+  two-2: green;
+  three-3: red;
+}
+set-1 {
+  width: 1px;
+}
+set-2 {
+  width: 2px;
+}
+set-3 {
+  width: 3px;
+}
+set-4 {
+  width: 4px;
+}
+.test {
+  width: 1.4;
+  width: false;
+  background-color: rgba(90, 10, 0, 0.875);
+  color: #323200;
+}
+.test {
+  color: blue;
+  font-size: 30px;
+}
+.test-2 img {
+  width: 12px;
+}
+/*# sourceMappingURL=08-function.css.map */

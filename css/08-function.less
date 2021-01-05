@@ -1,0 +1,92 @@
+@condition: 4;
+.test {
+    margin: if((@condition > 1), 10px, 5px);   // 10px
+}
+
+@bg: black;
+@bg-light: boolean(luma(@bg) > 50%);
+
+div {
+    background: @bg;
+    color: if(@bg-light, black, white);
+}
+
+.test::after {
+    //content: escape('a=b#(c$d)');
+    //content: e('calc(100px - 50%)');
+    //format-a-d: %("repetitions: %a file: %d", 1 + 2, "directory/file.less");
+    //format-a-d-upper: %('repetitions: %A file: %D', 1 + 2, "directory/file.less");
+    //format-s: %("repetitions: %s file: %s", 1 + 2, "directory/file.less");
+    //format-s-upper: %('repetitions: %S file: %S', 1 + 2, "directory/file.less");
+    @str: 'one', 'two', 'three', 'four';
+
+    //content: extract(@str, 2);  // 4
+    content: range(1px, 10px, 2)
+
+}
+
+@str: one, two;
+
+
+
+each(@str, {
+    .sel-@{value} {
+        a: @value;
+    }
+})
+
+@set: {
+    one: blue;
+    two: green;
+    three: red;
+}
+
+.set {
+    each(@set, {
+        @{key}-@{index}: @value
+    })
+}
+
+each(range(1px, 4px), {
+    set-@{index} {
+        width: @value;
+    }
+})
+
+@num: round(1.43, 1);
+.test {
+    width: @num;
+    width: iskeyword(111);
+
+    //color: saturate(hsl(90, 80%, 50%), 20%);
+    //background-color: spin(hsl(10, 90%, 50%), -30);
+    background-color: mix(rgba(100, 0, 0, 1.0), rgba(0, 100, 0, 0.5), 75%);
+    color: mix(rgb(100, 0, 0), rgb(0, 100, 0))
+    //spin(hsl(10, 90%, 50%), -30);
+}
+
+.mixin(@a) when(@a = 20px) {
+    color: red;
+}
+.mixin(@a) when(@a > 20px) {
+    color: blue;
+}
+
+.mixin(@a) {
+    font-size: @a;
+}
+
+.test {
+    .mixin(30px);
+}
+
+
+.image-width(@img-width) when((@img-width > 20px) or (@img-width < 10px)) {
+    img {
+        width: @img-width * 1.5;
+    }
+}
+
+.test-2 {
+    .image-width(8px);
+}
